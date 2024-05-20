@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct WeatherApp: App {
+    init() {
+           UITableView.appearance().backgroundColor = .clear
+           UITableViewCell.appearance().backgroundColor = .clear
+       }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen(viewModel:  HomeViewModel(service: NetworkServices(), manager: LocationManager()))
         }
     }
 }
